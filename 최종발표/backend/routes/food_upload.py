@@ -112,7 +112,8 @@ async def upload_food(
             aggregate=False,
             min_prob=0.20,
             yolo_iou=0.80,
-            merge_boxes=False
+            merge_boxes=False,
+            require_ae=True, 
         ) or {}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"탐지 모델 실행 중 오류: {e}")
